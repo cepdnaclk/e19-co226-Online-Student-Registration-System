@@ -55,6 +55,19 @@
 								}else{
 									header('Location: register.php?insert=error');
 								}
+// added
+								if ($userRole === "student") {
+									$roll = $_POST['roll'];
+									$address = $_POST['address'];
+									$studentClass = $_POST['studentClass'];
+									$contact = $_POST['contact'];
+
+									$student_query = "INSERT INTO `student_info` (`name`, `roll`, `class`, `city`, `pcontact`, `photo`, `datetime`) 
+													VALUES ('$name', '$roll', '$studentClass', '$address', '$contact', '$photo_name', NOW());";
+
+									mysqli_query($db_con, $student_query);
+								}
+// added
 						}else{
 							$passlan="This password more than 8 charset";
 						}
@@ -84,7 +97,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title>Hello, world!</title>
+    <title>EduEnroll</title>
   </head>
   <body>
     <div class="container"><br>
@@ -103,8 +116,8 @@
 						<div class="col-sm-6">
 							<label for="userRole">Select User Role:</label>
 							<select class="form-control" id="userRole" name="userRole">
-								<option value="student">Student</option>
 								<option value="admin">Admin</option>
+								<option value="student">Student</option>
 							</select>
 						</div>
 					</div>
@@ -117,6 +130,44 @@
 				      <?= isset($email_error)? '<label class="error">'.$email_error.'</label>':'';  ?>
 				    </div>
 				  </div>
+				  <!-- added -->
+				  <div class="student-fields" style="display: none;">
+					<div class="form-group row">
+						<div class="col-sm-6">
+							<input type="text" name="roll" class="form-control" placeholder="Roll Number">
+						</div>
+						<div class="col-sm-6">
+							<input type="text" name="address" class="form-control" placeholder="Address">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-6">
+							<input type="text" name="contact" class="form-control" placeholder="Contact Number">
+						</div>
+						<!-- <div class="col-sm-6">
+							<input type="text" name="studentClass" class="form-control" placeholder="Student Class">
+						</div> -->
+						<!-- added -->
+						
+						<div class="form-group">
+						<label for="class" class="d-flex justify-content-between">
+							<span>Student Class</span>
+							<select name="class" class="form-control" id="class" required="">
+								<option>Select</option>
+								<option value="1st">1st</option>
+								<option value="2nd">2nd</option>
+								<option value="3rd">3rd</option>
+								<option value="4th">4th</option>
+								<option value="5th">5th</option>
+							</select>
+						</label>
+						</div>
+
+						
+					<!-- added -->
+					</div>
+					</div>
+					<!--added  -->
 				  <div class="form-group row">
 				  	<div class="col-sm-4">
 				      <input type="text" name="username" value="<?= isset($username)? $username:'' ?>" class="form-control" id="inputPassword3" placeholder="Username"><?= isset($input_error['usrname'])? '<label class="error">'.$input_error['username'].'</label>':'';  ?><?= isset($username_error)? '<label class="error">'.$username_error.'</label>':'';  ?><?= isset($usernamelan)? '<label class="error">'.$usernamelan.'</label>':'';  ?>
@@ -145,7 +196,7 @@
               <p>If you have account, you can <a href="login.php">Login</a> your account!</p>
     </div>
     <footer>
-    	<p>Copyright &copy; 2016 to <?php echo date('Y') ?></p>
+    	<p>Copyright &copy; 2023 to <?php echo date('Y') ?></p>
     </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -154,5 +205,20 @@
     <script type="text/javascript">
     	$('.toast').toast('show')
     </script>
+	<!-- added -->
+	<script>
+    // JavaScript to show/hide extra fields for student based on user role selection
+    const userRoleSelect = document.getElementById("userRole");
+    const studentFields = document.querySelector(".student-fields");
+
+    userRoleSelect.addEventListener("change", function() {
+        if (userRoleSelect.value === "student") {
+            studentFields.style.display = "block";
+        } else {
+            studentFields.style.display = "none";
+        }
+    });
+	</script>
+	<!-- added -->
   </body>
 </html>
