@@ -31,15 +31,18 @@ if (!isset($_SESSION['user_login'])) {
   </head>
   <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="index.php"><i class="fas fa-chart-line fa-3x"></i></a>
+  <a class="navbar-brand" href="index.php"><i class="fa fa-puzzle-piece fa-3x" aria-hidden="true"></i></a>        
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button>   
+  <span class="navbar-text ml-2 navbar-text-large"><h3>EduPro</h3></span>
+  
+
 
   <div class="navbar-collapse collapse justify-content-end" id="navbarSupportedContent">
     <?php $showuser = $_SESSION['user_login']; $haha = mysqli_query($db_con,"SELECT * FROM `users` WHERE `username`='$showuser';"); $showrow=mysqli_fetch_array($haha); ?>
     <ul class="nav navbar-nav ">
-      <li class="nav-item"><a class="nav-link" href="index.php?page=user-profile"><i class="fa fa-user"></i> Welcome <?php echo $showrow['name']; ?>!</a></li>
+      <li class="nav-item"><a class="nav-link" href="index.php?page=user-profile"><i class="fa fa-handshake-o aria-hidden="true""></i> Welcome <?php echo $showrow['name']; ?>!</a></li>
                 <?php if ($showrow['userRole'] === 'admin') { ?>
       <li class="nav-item"><a class="nav-link" href="index.php?page=add-student"><i class="fa fa-user-plus"></i> Add Student</a></li>
                   <?php } ?>

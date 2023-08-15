@@ -10,17 +10,19 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Hello, world!</title>
+    <title>homepage</title>
   </head>
-  <body>
-    <div class="container"><br>
+  <body style="background-image: url('./admin/images/background.jpg'); background-size: cover; background-position: center center; background-repeat:no-repeat; background-color: rgba(0, 0, 0, 0.5);" >
+    <div 
+    class="container" 
+    ><br>
       <a class="btn btn-primary float-right" href="admin/login.php">Login</a>
-          <h1 class="text-center">Welcome to Student Management System!</h1><br>
+          <h1 class="text-center">Welcome to Student Registration  System  ...EduPro...!</h1><br>
 
           <div class="row">
             <div class="col-md-4 offset-md-4">
               <form method="POST">
-            <table class="text-center infotable">
+            <table class="text-center infotable bg-white">
               <tr>
                 <th colspan="2">
                   <p class="text-center">Student Information</p>
@@ -28,7 +30,7 @@
               </tr>
               <tr>
                 <td>
-                   <p>Choose Class</p>
+                   <p>Choose Academic Year</p>
                 </td>
                 <td>
                    <select class="form-control" name="choose">
@@ -36,7 +38,7 @@
                        Select
                      </option>
                      <option value="1st">
-                       1St
+                       1st
                      </option>
                      <option value="2nd">
                        2nd
@@ -56,10 +58,10 @@
 
               <tr>
                 <td>
-                  <p><label for="roll">Roll No</label></p>
+                  <p><label for="roll">Admission No</label></p>
                 </td>
                 <td>
-                  <input class="form-control" type="text" pattern="[0-9]{6}" id="roll" placeholder="Roll Num.." name="roll">
+                  <input class="form-control" type="text" pattern="[0-9]{6}" id="roll" placeholder="Admission No.." name="roll">
                 </td>
               </tr>
               <tr>
@@ -85,21 +87,22 @@
                 $city= $row['city'];
                 $photo= $row['photo'];
                 $pcontact= $row['pcontact'];
+                $datetime=$row['datetime'];
               ?>
         <div class="row">
           <div class="col-sm-6 offset-sm-3">
-            <table class="table table-bordered">
+            <table class="text-center infotable bg-white">
               <tr>
-                <td rowspan="5"><h3>Student Info</h3><img class="img-thumbnail" src="admin/images/<?= isset($photo)?$photo:'';?>" width="250px"></td>
+                <td rowspan="6"><h3>Student Info</h3><img class="img-thumbnail" src="admin/images/<?= isset($photo)?$photo:'';?>" width="250px"></td>
                 <td>Name</td>
                 <td><?= isset($stname)?$stname:'';?></td>
               </tr>
               <tr>
-                <td>Roll</td>
+                <td>Admission No</td>
                 <td><?= isset($stroll)?$stroll:'';?></td>
               </tr>
               <tr>
-                <td>Class</td>
+                <td> Academic Year</td>
                 <td><?= isset($stclass)?$stclass:'';?></td>
               </tr>
               <tr>
@@ -107,8 +110,12 @@
                 <td><?= isset($city)?$city:'';?></td>
               </tr>
               <tr>
-                <td>Submit Date</td>
+                <td>Contact No</td>
                 <td><?= isset($pcontact)?$pcontact:'';?></td>
+              </tr>
+              <tr>
+                <td>Registered Date</td>
+                <td><?= isset($datetime)?$datetime:'';?></td>
               </tr>
             </table>
           </div>

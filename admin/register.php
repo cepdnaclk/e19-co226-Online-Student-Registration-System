@@ -59,11 +59,11 @@
 								if ($userRole === "student") {
 									$roll = $_POST['roll'];
 									$address = $_POST['address'];
-									$studentClass = $_POST['studentClass'];
+									$class = $_POST['class'];
 									$contact = $_POST['contact'];
 
 									$student_query = "INSERT INTO `student_info` (`name`, `roll`, `class`, `city`, `pcontact`, `photo`, `datetime`) 
-													VALUES ('$name', '$roll', '$studentClass', '$address', '$contact', '$photo_name', NOW());";
+													VALUES ('$name', '$roll', '$class', '$address', '$contact', '$photo_name', NOW());";
 
 									mysqli_query($db_con, $student_query);
 								}
@@ -134,7 +134,7 @@
 				  <div class="student-fields" style="display: none;">
 					<div class="form-group row">
 						<div class="col-sm-6">
-							<input type="text" name="roll" class="form-control" placeholder="Roll Number">
+							<input type="text" name="roll" class="form-control" placeholder="Admission NO">
 						</div>
 						<div class="col-sm-6">
 							<input type="text" name="address" class="form-control" placeholder="Address">

@@ -66,8 +66,8 @@
 		    <input name="name" type="text" class="form-control" id="name" value="<?= isset($name)? $name: '' ; ?>" required="">
 	  	</div>
 	  	<div class="form-group">
-		    <label for="roll">Student Roll</label>
-		    <input name="roll" type="text" value="<?= isset($roll)? $roll: '' ; ?>" class="form-control" pattern="e\d{5}" id="roll" required="">
+		    <label for="roll">Student Admission No</label>
+		    <input name="roll" type="text" value="<?= isset($roll)? $roll: '' ; ?>" class="form-control" pattern="[0-9]{5}" id="roll" required="">
 	  	</div>
 	  	<div class="form-group">
 		    <label for="address">Student Address</label>
@@ -75,10 +75,10 @@
 	  	</div>
 	  	<div class="form-group">
 		    <label for="pcontact">Parant Contact NO</label>
-		    <input name="pcontact" type="text" class="form-control" id="pcontact" pattern="0[5|6|7|8|9][0-9]{8}" value="<?= isset($pcontact)? $pcontact: '' ; ?>" placeholder="01........." required="">
+		    <input name="pcontact" type="text" class="form-control" id="pcontact" pattern="0[0-9]{9}" value="<?= isset($pcontact)? $pcontact: '' ; ?>" placeholder="07........." required="">
 	  	</div>
 	  	<div class="form-group">
-		    <label for="class">Student Class</label>
+		    <label for="class">Academic Year</label>
 		    <select name="class" class="form-control" id="class" required="">
 		    	<option>Select</option>
 		    	<option value="1st">1st</option>
