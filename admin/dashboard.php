@@ -9,7 +9,7 @@
     }
 ?>
 
-<h1><a href="index.php"><i class="fas fa-tachometer-alt"></i>  Dashboard</a> <small>Satistics Overview</small></h1>
+<h1><a href="index.php"><i class="fas fa-tachometer-alt"></i>  Dashboard</a> <small>  WELCOME!</small></h1>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
      <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-user"></i> Dashboard</li>
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class="list-group-item-primary list-group-item list-group-item-action">
+      <div class="list-group-item-light list-group-item list-group-item-action">
         <div class="row">
           <div class="col-sm-8">
             <p class="">All Students</p>
@@ -58,7 +58,7 @@
           </div>
         </div>
       </div>
-      <div class="list-group-item-primary list-group-item list-group-item-action">
+      <div class="list-group-item-light list-group-item list-group-item-action">
          <a href="index.php?page=all-users">
         <div class="row">
           <div class="col-sm-8">
@@ -74,22 +74,22 @@
   </div>
 
   <div class="col-sm-4">
-     <div class="card text-white bg-warning mb-3">
+     <div class="card text-white mb-3" style="background-color:#8c5eb5">
       <div class="card-header">
         <div class="row">
           <?php $usernameshow = $_SESSION['user_login']; $userspro = mysqli_query($db_con,"SELECT * FROM `users` WHERE `username`='$usernameshow';"); $userrow=mysqli_fetch_array($userspro); ?>
-          <div class="col-sm-6">
+          <div class="col-sm-8">
             <img class="showimg" src="images/<?php echo $userrow['photo']; ?>">
             <div style="font-size: 20px"><?php echo ucwords($userrow['name']); ?></div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             
             <div class="clearfix"></div>
             <div class="float-sm-right">Welcome!</div>
           </div>
         </div>
       </div>
-      <div class="list-group-item-primary list-group-item list-group-item-action">
+      <div class="list-group-item-light list-group-item list-group-item-action">
         <a href="index.php?page=user-profile">
         <div class="row">
           <div class="col-sm-8">
@@ -104,16 +104,18 @@
     </div>
   </div>  
 </div>
+
 <hr>
+
 <h3>New Students</h3>
 <table class="table  table-striped table-hover table-bordered" id="data">
   <thead class="thead-dark">
     <tr>
       <th scope="col">SL</th>
       <th scope="col">Name</th>
-      <th scope="col">Roll</th>
+      <th scope="col">Enrollement No</th>
       <th scope="col">City</th>
-      <th scope="col">Contact</th>
+      <th scope="col">Contact No</th>
       <th scope="col">Photo</th>
     </tr>
   </thead>

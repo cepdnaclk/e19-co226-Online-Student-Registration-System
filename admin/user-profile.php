@@ -25,10 +25,6 @@ $user=  $_SESSION['user_login'];
   <div class="col-sm-6">
     <table class="table table-bordered">
       <tr>
-        <td>User ID</td>
-        <td><?php echo $row['id']; ?></td>
-      </tr>
-      <tr>
         <td>Name</td>
         <td><?php echo ucwords($row['name']); ?></td>
       </tr>
@@ -48,6 +44,22 @@ $user=  $_SESSION['user_login'];
         <td>Register Date</td>
         <td><?php echo $row['datetime']; ?></td>
       </tr>
+      <!-- New row to display registered courses -->
+      <tr>
+        <td>Registered Courses</td>
+        <td>
+          <?php
+            $student_id = $row['id'];
+            $course_query = mysqli_query($db_con, "SELECT courses.course_name FROM courses
+                                                   INNER JOIN enrollments ON courses.id = enrollments.course_id
+                                                   WHERE enrollments.student_id = $student_id;");
+            while ($course_row = mysqli_fetch_array($course_query)) {
+              echo ucwords($course_row['course_name']) . "<br>";
+            }
+          ?>
+        </td>
+      </tr>
+            <!--added  -->
     </table>
     <a class="btn btn-warning pull-right" href="index.php?page=edit-user&id=<?php echo base64_encode($row['id']); ?>">Edit Profile</a>
   </div>

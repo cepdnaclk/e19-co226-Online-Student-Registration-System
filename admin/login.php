@@ -55,10 +55,10 @@ if(isset($_SESSION['user_login'])){
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <title>EduEnroll</title>
   </head>
-  <body>
-    <div class="container"><br>
-          <h1 class="text-center">Login Users!</h1><hr><br>
-          <div class="d-flex justify-content-center">
+  <body style="background-image: url('./images/login.jpg'); background-size: cover;  background-repeat:no-repeat;">
+    <div class="container" style=" position: absolute; top:20%; left:10%"><br>
+          <h1 class="text-center text-white" >Login Users!</h1><br>
+          <div class="d-flex justify-content-center" >
           	<?php if(isset($usernameerr)){ ?> <div role="alert" aria-live="assertive" aria-atomic="true" align="center" class="toast alert alert-danger fade hide" data-delay="2000"><?php echo $usernameerr; ?></div><?php };?>
           		<?php if(isset($worngpass)){ ?> <div role="alert" aria-live="assertive" aria-atomic="true" align="center" class="toast alert alert-danger fade hide" data-delay="2000"><?php echo $worngpass; ?></div><?php };?>
           		<?php if(isset($status_inactive)){ ?> <div role="alert" aria-live="assertive" aria-atomic="true" align="center" class="toast alert alert-danger fade hide" data-delay="2000"><?php echo $status_inactive; ?></div><?php };?>
@@ -79,7 +79,7 @@ if(isset($_SESSION['user_login'])){
 				  <div class="text-center">
 				      <button type="submit" name="login" class="btn btn-warning">Sign in</button>
 				    </div>
-				    <p>If you have don't user account, You can<a href="register.php"> Register Account!</a></p>
+				    <p class="text-white pt-5">If you don't have a user account, You can<a href="register.php" class="text-danger"> Register Here!</a></p>
 				  </div>
 				</form>
             </div>

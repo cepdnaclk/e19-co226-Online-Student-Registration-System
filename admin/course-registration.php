@@ -9,7 +9,6 @@
     }
 ?>
 <?php
-session_start();
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_login'])) {
@@ -19,22 +18,34 @@ if (!isset($_SESSION['user_login'])) {
 
 require_once 'db_con.php'; // Include your database connection
 
-// Handle course drop form submission
-if (isset($_POST['drop_course'])) {
-  $student_id = $_SESSION['user_id']; // Get the student's ID from the session
-  $course_id = $_POST['course_id'];   // Get the course ID from the form
+// Handle course add form submission
+if (isset($_POST['add_course'])) {
+  $showuser = $_SESSION['user_login'];
+  $haha = mysqli_query($db_con,"SELECT * FROM `users` WHERE `username`='$showuser';");
+  $showrow=mysqli_fetch_array($haha);
 
-  // Delete the enrollment record from the database
-  $delete_query = "DELETE FROM enrollments WHERE student_id = $student_id AND course_id = $course_id";
-  $result = mysqli_query($db_con, $delete_query);
+  
+  $student_id =$showrow['id']; // Get the student's ID from the session
+  $course_id = $_POST['course_id'];   // Get the selected course ID from the form
 
-  if ($result) {
-    $message = "Course dropped successfully.";
+  // Check if the student is already enrolled in the selected course
+  $check_query = "SELECT * FROM enrollments WHERE student_id = $student_id AND course_id = $course_id";
+  $check_result = mysqli_query($db_con, $check_query);
+
+  if (mysqli_num_rows($check_result) > 0) {
+    $error_message = "You are already enrolled in this course.";
   } else {
-    $error_message = "Failed to drop the course. Please try again.";
+    // Insert the enrollment record into the database
+    $insert_query = "INSERT INTO enrollments (student_id, course_id) VALUES ($student_id, $course_id)";
+    $insert_result = mysqli_query($db_con, $insert_query);
+
+    if ($insert_result) {
+      $message = "Course added successfully.";
+    } else {
+      $error_message = "Failed to add the course. Please try again.";
+    }
   }
 }
-
 ?>
 
 <!doctype html>
@@ -49,7 +60,7 @@ if (isset($_POST['drop_course'])) {
   <!-- Include your navigation/header here -->
 
   <div class="container">
-    <h2>Drop Course</h2>
+    <h2>Add Courses</h2>
     <?php
     if (isset($message)) {
       echo '<div class="alert alert-success">' . $message . '</div>';
@@ -59,14 +70,20 @@ if (isset($_POST['drop_course'])) {
     ?>
     <form method="POST">
       <div class="form-group">
-        <label for="course_id">Select Course to Drop:</label>
+        <label for="course_id">Select Course to Add:</label>
         <select class="form-control" name="course_id" required>
-          <option value="">Select Course</option>
-          <!-- Populate this dropdown with the student's enrolled courses -->
-          <!-- You can fetch enrolled courses for the logged-in student from the database -->
+          <option value="" disabled selected>Select Course</option>
+          <option value="1">History</option>
+          <option value="2">Geography</option>
+          <option value="3">Political Science</option>
+          <option value="4">Psychology</option>
+          <option value="5">Drama</option>
+          <option value="6">Music</option>
+          <option value="7">Mathematics</option>
+          <option value="8">Anatomy</option>
         </select>
       </div>
-      <button type="submit" name="drop_course" class="btn btn-danger">Drop Course</button>
+      <button type="submit" name="add_course" class="btn btn-success">Add Course</button>
     </form>
   </div>
 

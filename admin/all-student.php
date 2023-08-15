@@ -55,9 +55,9 @@
     <tr>
       <th scope="col">SL</th>
       <th scope="col">Name</th>
-      <th scope="col">Admition No</th>
+      <th scope="col">Admission No</th>
       <th scope="col">City</th>
-      <th scope="col">Contact</th>
+      <th scope="col">Contact No</th>
       <th scope="col">Photo</th>
       <th scope="col">Action</th>
     </tr>

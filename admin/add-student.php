@@ -74,7 +74,7 @@
 		    <input name="address" type="text" value="<?= isset($address)? $address: '' ; ?>" class="form-control" id="address" required="">
 	  	</div>
 	  	<div class="form-group">
-		    <label for="pcontact">Parant Contact NO</label>
+		    <label for="pcontact">Guardian's Contact NO</label>
 		    <input name="pcontact" type="text" class="form-control" id="pcontact" pattern="0[0-9]{9}" value="<?= isset($pcontact)? $pcontact: '' ; ?>" placeholder="07........." required="">
 	  	</div>
 	  	<div class="form-group">

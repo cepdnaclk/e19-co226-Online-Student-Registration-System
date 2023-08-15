@@ -100,8 +100,9 @@
     <title>EduEnroll</title>
   </head>
   <body>
-    <div class="container"><br>
+    <div class="container border border-primary my-5 p-5" style="border-radius: 30px;"><br>
           <h1 class="text-center">Register Users!</h1><hr><br>
+		  <!-- background: linear-gradient(to right, #17b0b0, #1780bd); -->
           <div class="d-flex justify-content-center">
           	<?php 
           		if (isset($_GET['insert'])) {
@@ -134,10 +135,10 @@
 				  <div class="student-fields" style="display: none;">
 					<div class="form-group row">
 						<div class="col-sm-6">
-							<input type="text" name="roll" class="form-control" placeholder="Admission NO">
+							<input type="text" name="roll" class="form-control" placeholder="Admission No">
 						</div>
 						<div class="col-sm-6">
-							<input type="text" name="address" class="form-control" placeholder="Address">
+							<input type="text" name="address" class="form-control" placeholder="Current city">
 						</div>
 					</div>
 					<div class="form-group row">
@@ -151,7 +152,7 @@
 						
 						<div class="form-group">
 						<label for="class" class="d-flex justify-content-between">
-							<span>Student Class</span>
+							<span>Year of Study</span>
 							<select name="class" class="form-control" id="class" required="">
 								<option>Select</option>
 								<option value="1st">1st</option>
@@ -193,7 +194,7 @@
 				</form>
             </div>
           </div>
-              <p>If you have account, you can <a href="login.php">Login</a> your account!</p>
+              <p>If you have an account, you can <a href="login.php">Login</a> to your account!</p>
     </div>
     <footer>
     	<p>Copyright &copy; 2023 to <?php echo date('Y') ?></p>
