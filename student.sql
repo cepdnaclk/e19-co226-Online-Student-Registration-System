@@ -44,11 +44,14 @@ CREATE TABLE `student_info` (
 --
 
 INSERT INTO `student_info` (`id`, `name`, `roll`, `class`, `city`, `pcontact`, `photo`, `datetime`) VALUES
-(41, 'Ajharul Islam', 444433, '1st', 'House#15, Ward#', '01944444444', '4444332020-06-06-06-58.jpg', '2020-06-06 16:17:58'),
-(43, 'Majhar Rakib', 444439, '2nd', 'House#1eww', '01812888858', '4444392020-06-06-06-53.jpg', '2020-06-06 16:18:53'),
-(44, 'kutub ussin', 443322, '4th', 'Dhaka, Banglade', '01797159600', '4433222020-06-06-06-28.jpg', '2020-06-06 16:19:28'),
-(45, 'Shirin Akter', 443342, '2nd', 'Dhaka, Banglade', '01797159600', '4433422020-06-06-06-51.jpg', '2020-06-06 16:19:51'),
-(47, 'utfol kumar das', 443353, '2nd', 'Dhaka, Banglade', '01814270541', '4433532020-06-06-06-32.jpg', '2020-06-06 16:21:32');
+(193, 'Rajitha', 190405, '3rd', 'Kuda Galgamuwa', '0762345684', 'rajitha1234.jpg', '2023-08-15 10:54:27'),
+(194, 'Kaveen', 190095, '2nd', 'Kuliyapitiya', '0712465798', 'kaveen1234.jpg', '2023-08-15 10:57:01'),
+(198, 'Udaya', 190155, '1st', 'Kurunegala', '0763021003', 'udaya1234.jfif', '2023-08-15 11:11:23'),
+(199, 'Eshan', 190163, '4th', 'Kurunegala', '0745623457', 'eshan1234.jpg', '2023-08-15 11:12:48'),
+(200, 'Pumudu', 190306, '2nd', 'Narammla', '0708934562', 'pumudu1234.jfif', '2023-08-15 11:14:48'),
+(203, 'Thiliru', 190489, '2nd', 'Kurunegala', '0745673489', 'thiliru123.jpg', '2023-08-15 11:26:57'),
+(204, 'Isira', 190253, '3rd', 'Malkaduwawa', '0721456784', 'isira123.jfif', '2023-08-15 11:29:08'),
+(205, 'Harsha', 190500, '4th', 'Wariyapola', '0754676342', 'harsha1234.jfif', '2023-08-15 12:22:45');
 
 -- --------------------------------------------------------
 
@@ -73,14 +76,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `userRole`, `photo`, `status`, `datetime`) VALUES
-(10, 'Ajharul Islam', 'dedke@gmail.com', 'sdsdq232323', '1bbd886460827015e5d605ed44252251', 'admin', 'sdsdq2323ee23.jpg', 'inactive', '2020-06-08 11:49:10'),
-(14, 'Majhar Rakib', 'ded222ke@gmail.com', 'yescablessdwwewe', '618e02fc80fa3a0bd41d65f5b54a11fc50426d12', 'student', 'yescablessdwwewe.jpg', 'inactive', '2020-06-08 11:49:10'),
-(15, 'Ajharul Islam', 'sdsdsdsdsdsd@gmail.com', 'mdrashed38', '618e02fc80fa3a0bd41d65f5b54a11fc50426d12', 'admin', 'mdrashed38.jpg', 'inactive', '2020-06-08 11:49:10'),
-(16, 'Ajharul Islam', 'rajrashed42s1@gmail.com', 'yescablessasasas', '618e02fc80fa3a0bd41d65f5b54a11fc50426d12', 'admin', 'yescablessasasas.jpg', 'inactive', '2020-06-08 11:49:10'),
-(17, 'Ajharul Islam', 'rajrashed42sdsd1@gmail.com', 'yescables133232323', '618e02fc80fa3a0bd41d65f5b54a11fc50426d12', 'admin', 'yescables133232323.jpg', 'inactive', '2020-06-08 11:49:10'),
-(18, 'Ajharul Islam', 'djforhad@gmail.com', 'rasheddd', '618e02fc80fa3a0bd41d65f5b54a11fc50426d12', 'student', 'rasheddd21-06-20-06-2020steo.jpg', 'active', '2020-06-08 11:49:10'),
-(19, 'kus', 'kus@gmail.com', 'kus12345', '1f82ea75c5cc526729e2d581aeb3aeccfef4407e', 'student', 'kus12345.jpg', 'inactive', '2020-06-08 11:49:10'),
-(20, 'Ajharul Islam', 'janatakumar@gmail.com', 'kumarkosl', '618e02fc80fa3a0bd41d65f5b54a11fc50426d12', 'student', 'kumarkosl.jpg', 'inactive', '2020-06-08 11:49:10');
+(181, 'Chamanga', 'e19096@eng.pdn.ac.lk', 'chamanga1234', '17fe1140ba7e0c2a8e13e6deb3c7cf9ad239ff94', 'admin', 'chamanga1234.jfif', 'active', '2023-08-15 10:18:19'),
+(182, 'Rajitha', 'e19405@eng.pdn.ac.lk', 'rajitha1234', '84ac64fe43701a3e9d563ad6fe5f94eef5368351', 'student', 'rajitha1234.jpg', 'active', '2023-08-15 10:54:27'),
+(183, 'Kaveen', 'e19095@eng.pdn.ac.lk', 'kaveen1234', '66118c41afae6ec947e84e9446383c18318ac56c', 'student', 'kaveen1234.jpg', 'active', '2023-08-15 10:57:01'),
+(184, 'Chamuditha', 'e19495@eng.pdn.ac.lk', 'chamuditha1234', 'cf45f5f645eb6b2c636ff8a7ebc6b46b4f13bdfd', 'admin', 'chamuditha1234.jfif', 'active', '2023-08-15 11:03:56'),
+(188, 'Udaya', 'e19155@eng.pdn.ac.lk', 'udaya1234', '47b29bce1c7585b341ceef892f413ad0cc92ba91', 'student', 'udaya1234.jfif', 'active', '2023-08-15 11:11:23'),
+(189, 'Eshan', 'e19163@eng.pdn.ac.lk', 'eshan1234', '5dc2e9d1821222d18aec7099cfd6759e724c0803', 'student', 'eshan1234.jpg', 'active', '2023-08-15 11:12:48'),
+(190, 'Pumudu', 'e19306@eng.pdn.ac.lk', 'pumudu1234', 'a499024a5b3e187d7a0b07be3773adfc08265f38', 'student', 'pumudu1234.jfif', 'active', '2023-08-15 11:14:48'),
+(193, 'Thiliru', 'e19489@eng.pdn.ac.lk', 'thiliru123', '7ad099ffc1dbd23bc30056183833fe57fa699750', 'student', 'thiliru123.jpg', 'active', '2023-08-15 11:26:57'),
+(194, 'Isira', 'e19253@eng.pdn.ac.lk', 'isira123', '4d1c822a3685ad37f89944ffd70a73e96d918591', 'student', 'isira123.jfif', 'active', '2023-08-15 11:29:08'),
+(195, 'Harsha', 'e19500@eng.pdn.ac.lk', 'harsha1234', '8e4a549a9b25f12a9ade42b269425608732813d5', 'student', 'harsha1234.jfif', 'active', '2023-08-15 12:22:45');
 
 --
 -- Indexes for dumped tables

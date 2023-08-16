@@ -11,18 +11,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>homepage</title>
+    <style>
+        .colored-frame {
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 50px;
+            position: relative;
+            display: inline-block;
+            backdrop-filter: blur(12px); /* Apply the blur effect to the inside */
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+        }
+
+        .colored-frame h1 {
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .login-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        
+    </style>
   </head>
-  <body style="background-image: url('./admin/images/background.jpg'); background-size: cover; background-position: center center; background-repeat:no-repeat; background-color: rgba(0, 0, 0, 0.5);" >
+  <body style="background-image: url('./admin/images/new2.webp'); background-size: cover; background-position: center center; background-repeat:no-repeat; background-color: rgba(0, 0, 0, 0.5);" >
     <div 
     class="container" 
     ><br>
-      <a class="btn btn-primary float-right" href="admin/login.php">Login</a>
-          <h1 class="text-center">Welcome to Student Registration  System  ...EduPro...!</h1><br>
+      <a class="btn btn-primary login_button" href="admin/login.php">Login</a>
+        <div class="colored-frame">
+            <h1 class="text-center"> ...Welcome to Student Registration  System  ...EduPro...</h1><br>
+        </div>
+      <hr>
 
           <div class="row">
             <div class="col-md-4 offset-md-4">
               <form method="POST">
-            <table class="text-center infotable bg-white">
+            <table class="text-center infotable bg-lightblue">
               <tr>
                 <th colspan="2">
                   <p class="text-center">Student Information</p>
